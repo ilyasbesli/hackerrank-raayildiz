@@ -4,15 +4,17 @@ package me.rayyildiz.hackerrank.fp
   * Created by rayyildiz on 8/19/16.
   */
 object ComputePerimeterPolygon {
-  class Point(val x:Int, val y:Int) {
-    def distanceFrom(other:Point):Double = {
-      val a = x - other.x
-      val b = y - other.y
-      math.sqrt(a*a + b*b)
-    }
-  }
+
 
   def main(args: Array[String]): Unit = {
+    class Point(val x:Int, val y:Int) {
+      def distanceFrom(other:Point):Double = {
+        val a = x - other.x
+        val b = y - other.y
+        math.sqrt(a*a + b*b)
+      }
+    }
+
     val tests = scala.io.StdIn.readInt()
 
     val lines = Iterator.continually(scala.io.StdIn.readLine()).take(tests)
