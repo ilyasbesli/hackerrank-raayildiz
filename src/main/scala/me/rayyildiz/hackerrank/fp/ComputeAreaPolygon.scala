@@ -2,6 +2,8 @@ package me.rayyildiz.hackerrank.fp
 
 /**
   * Created by rayyildiz on 8/19/16.
+  *
+  * Soltion is http://www.mathopenref.com/coordpolygonarea.html
   */
 object ComputeAreaPolygon {
 
@@ -24,22 +26,23 @@ object ComputeAreaPolygon {
 
     val xs = xxs.toList
 
-    val maxX = xs.map(_.x).max - xs.map(_.x).min
-    val maxY = xs.map(_.y).max - xs.map(_.y).min
+    //val maxX = xs.map(_.x).max - xs.map(_.x).min
+    //val maxY = xs.map(_.y).max - xs.map(_.y).min
 
     if ( xs.length < 3 ) println(1)
     else {
-      val totalArea:Int = maxX * maxY
+      // val totalArea:Int = maxX * maxY
 
       val res = for(i<- 0 until xs.length) yield{
         val p = xs(i)
         val next = if ( i == xs.length - 1) xs(0) else xs(i+1)
 
-        Math.abs(p.x - next.x) * Math.abs(p.y - next.y)
+
+        p.x * next.y - next.x * p.y
       }
 
 
-      val r = totalArea.toDouble - res.sum / 2
+      val r = res.sum.toDouble / 2
 
       println(r)
     }
