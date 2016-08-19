@@ -1,3 +1,5 @@
+import sbt.Keys._
+
 
 name          := "hackerrank-scala"
 organization  := "me.rayyildiz"
