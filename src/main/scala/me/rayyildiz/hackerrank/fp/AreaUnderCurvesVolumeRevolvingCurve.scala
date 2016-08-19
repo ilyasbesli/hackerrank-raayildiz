@@ -9,14 +9,7 @@ object AreaUnderCurvesVolumeRevolvingCurve {
     // To compute the value of the function
     // For the given coefficients, powers and value of x
 
-    val list = for{
-      c <- coefficients
-      p <- powers
-    } yield {
-      c * Math.pow(x,p.toDouble)
-    }
-
-    list.sum
+    (0 until coefficients.length).map((i) => coefficients(i)*math.pow(x, powers(i))).sum
   }
 
   // This function will be used while invoking "Summation" to compute
@@ -28,7 +21,7 @@ object AreaUnderCurvesVolumeRevolvingCurve {
     // To compute the area of the circle on revolving the point
     // (x,f(x)) around the X-Axis
     // For the given coefficients, powers and value of x
-    x
+    math.Pi*math.pow(f(coefficients, powers, x), 2)
   }
 
   // This is the part where the series is summed up
@@ -38,7 +31,7 @@ object AreaUnderCurvesVolumeRevolvingCurve {
   def summation(func:(List[Int],List[Int],Double)=>Double,upperLimit:Int,lowerLimit:Int,coefficients:List[Int],powers:List[Int]):Double = {
     // Fill up this function
 
-    ???
+    (lowerLimit*1d to upperLimit*1d by 0.001d).map(0.001d*func(coefficients,powers,_)).sum
   }
 
 
@@ -46,16 +39,23 @@ object AreaUnderCurvesVolumeRevolvingCurve {
   // The Input-Output functions will be handled by us. You only need to concentrate your effort on the function bodies above.
 
 
+  def displayAnswers(coefficients:List[Int],powers:List[Int],limits:List[Int]) {
+    println(summation(f,limits.reverse.head,limits.head,coefficients,powers))
+    println(summation(area,limits.reverse.head,limits.head,coefficients,powers))
+  }
+
 
   def main(args: Array[String]): Unit = {
 
     val as = List(1, 2, 3, 4, 5)
     val xs = List(6, 7, 8, 9, 10)
     val numbers = List(1, 4)
-
+    displayAnswers(as,xs,numbers)
+/*
     for(n <- numbers){
+      displayAnswers(as,xs,)
       println(f(as,xs,n.toDouble))
     }
-
+*/
   }
 }
