@@ -10,9 +10,7 @@ object Day10BinaryNumbers {
 
     val r = Integer.toBinaryString(n)
 
-    val parts = r.split("0")
-    val s = parts.map(_.length)
+    val s = r.split("0").map(_.length)
     println(s.max)
-
   }
 }
