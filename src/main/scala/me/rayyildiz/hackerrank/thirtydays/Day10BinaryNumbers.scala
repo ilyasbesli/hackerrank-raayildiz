@@ -7,10 +7,6 @@ object Day10BinaryNumbers {
 
   def main(args: Array[String]): Unit = {
     val n = scala.io.StdIn.readInt()
-
-    val r = Integer.toBinaryString(n)
-
-    val s = r.split("0").map(_.length)
-    println(s.max)
+    println(Integer.toBinaryString(n).split("0").map(_.length).max)
   }
 }
