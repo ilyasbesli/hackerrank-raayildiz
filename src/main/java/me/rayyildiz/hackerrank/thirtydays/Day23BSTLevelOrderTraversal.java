@@ -21,7 +21,6 @@ public class Day23BSTLevelOrderTraversal {
         }
     }
 
-
     public static TreeNode insert(TreeNode root,int data){
         if(root==null){
             return new TreeNode(data);
