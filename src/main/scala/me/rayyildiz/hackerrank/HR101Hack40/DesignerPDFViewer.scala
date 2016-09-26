@@ -7,18 +7,17 @@ object DesignerPDFViewer {
 
   def main(args: Array[String]): Unit = {
     val alphabet = "abcdefghijklmnopqrstuvwxyz"
-    val line = scala.io.StdIn.readLine()
-    val lengths = line.split(" ").map(_.toInt)
+    val line     = scala.io.StdIn.readLine()
+    val lengths  = line.split(" ").map(_.toInt)
 
     val str = scala.io.StdIn.readLine()
 
-    val strLengths = for(t <- str.indices) yield {
+    val strLengths = for (t <- str.indices) yield {
       val ch = alphabet.indexOf(str(t))
       lengths(ch)
     }
 
-
-    println(strLengths.max * str.length *  1)
+    println(strLengths.max * str.length * 1)
 
   }
 }

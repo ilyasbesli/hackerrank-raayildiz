@@ -7,10 +7,8 @@ package me.rayyildiz.hackerrank.fp
   */
 object ComputeAreaPolygon {
 
-
   def main(args: Array[String]): Unit = {
-    case class Point(x:Int, y:Int)
-
+    case class Point(x: Int, y: Int)
 
     val tests = scala.io.StdIn.readInt()
 
@@ -18,10 +16,10 @@ object ComputeAreaPolygon {
     val parts = lines.partition(!_.contains(" "))
     val pairs = parts._2.map(_.split(" ")).map(arr => Tuple2(arr(0).toInt, arr(1).toInt))
 
-    val xxs = for{
+    val xxs = for {
       cor <- pairs
     } yield {
-      Point(cor._1,cor._2)
+      Point(cor._1, cor._2)
     }
 
     val xs = xxs.toList
@@ -29,18 +27,16 @@ object ComputeAreaPolygon {
     //val maxX = xs.map(_.x).max - xs.map(_.x).min
     //val maxY = xs.map(_.y).max - xs.map(_.y).min
 
-    if ( xs.length < 3 ) println(1)
+    if (xs.length < 3) println(1)
     else {
       // val totalArea:Int = maxX * maxY
 
-      val res = for(i<- 0 until xs.length) yield{
-        val p = xs(i)
-        val next = if ( i == xs.length - 1) xs(0) else xs(i+1)
-
+      val res = for (i <- 0 until xs.length) yield {
+        val p    = xs(i)
+        val next = if (i == xs.length - 1) xs(0) else xs(i + 1)
 
         p.x * next.y - next.x * p.y
       }
-
 
       val r = res.sum.toDouble / 2
 

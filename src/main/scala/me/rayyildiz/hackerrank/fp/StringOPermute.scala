@@ -11,14 +11,14 @@ object StringOPermute {
     val lines = for (i <- 0 until t) yield scala.io.StdIn.readLine()
 
     val permuted = for (line <- lines) yield {
-      val aa = for (j <- 0 until(line.length - 1,2))yield {
-        s"${line(j+1)}${line(j)}"
+      val aa = for (j <- 0 until (line.length - 1, 2)) yield {
+        s"${line(j + 1)}${line(j)}"
       }
 
       aa.mkString
     }
 
-    for(p<- permuted) {
+    for (p <- permuted) {
       println(p)
     }
   }

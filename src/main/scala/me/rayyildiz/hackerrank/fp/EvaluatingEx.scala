@@ -5,19 +5,18 @@ package me.rayyildiz.hackerrank.fp
   */
 object EvaluatingEx {
 
-  def fact(i:Int):Int = {
-    if ( i < 1) 1
-    else fact(i-1)*i
+  def fact(i: Int): Int = {
+    if (i < 1) 1
+    else fact(i - 1) * i
   }
 
-
-  def f(x: Float):Float = {
+  def f(x: Float): Float = {
     // Compute and Return the value of e^x
 
-    def acc(i:Int, res:Float):Float = {
-      if ( i > 9) res
+    def acc(i: Int, res: Float): Float = {
+      if (i > 9) res
       else {
-        val m = Math.pow(x,i)
+        val m = Math.pow(x, i)
         val f = fact(i)
         val r = m.toFloat / f
 
@@ -26,12 +25,12 @@ object EvaluatingEx {
       }
     }
 
-    acc(0,0)
+    acc(0, 0)
   }
 
   def main(args: Array[String]): Unit = {
     val xs = List(20.0000f, 5.0000f, 0.5000f, -0.5000f)
-    for(x <- xs){
+    for (x <- xs) {
       println(s"result[${x}]: ${f(x)}")
     }
   }

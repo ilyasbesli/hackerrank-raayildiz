@@ -5,5 +5,5 @@ package me.rayyildiz.hackerrank.security
   */
 object SecurityFunctions {
 
-  def function(x: Int): Int = x%11
+  def function(x: Int): Int = x % 11
 }

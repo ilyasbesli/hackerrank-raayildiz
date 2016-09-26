@@ -6,17 +6,17 @@ package me.rayyildiz.hackerrank.fp
 object FunctionsOrNot {
 
   def main(args: Array[String]): Unit = {
-    val lines = scala.io.Source.stdin.getLines().toList
-    val tests = lines.head.toInt
-    val parts = lines.tail.partition(!_.contains(" "))
+    val lines  = scala.io.Source.stdin.getLines().toList
+    val tests  = lines.head.toInt
+    val parts  = lines.tail.partition(!_.contains(" "))
     val counts = parts._1.map(_.toInt)
-    val pairs = parts._2.map(_.split(" ")).map(arr => Tuple2(arr(0).toInt, arr(1).toInt))
-    var start = 0
-    counts.foreach {
-      i => {
+    val pairs  = parts._2.map(_.split(" ")).map(arr => Tuple2(arr(0).toInt, arr(1).toInt))
+    var start  = 0
+    counts.foreach { i =>
+      {
         val p = pairs.slice(start, start + i)
         start = start + i
-        println(if(isFunction(p)) "YES" else "NO")
+        println(if (isFunction(p)) "YES" else "NO")
       }
     }
 

@@ -1,0 +1,2 @@
+--style defaultWithAlign    # For pretty alignment
+--maxColumn 120             # Fit for macbook pro 13

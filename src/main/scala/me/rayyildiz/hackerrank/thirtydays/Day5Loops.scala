@@ -5,12 +5,11 @@ package me.rayyildiz.hackerrank.thirtydays
   */
 object Day5Loops {
 
-
   def main(args: Array[String]): Unit = {
     val n = scala.io.StdIn.readInt()
 
-    for( i <- 1 to 10){
-      println(s"${n} x ${i} = ${n*i}")
+    for (i <- 1 to 10) {
+      println(s"${n} x ${i} = ${n * i}")
     }
   }
 }

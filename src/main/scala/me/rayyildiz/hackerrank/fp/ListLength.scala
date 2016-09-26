@@ -5,14 +5,11 @@ package me.rayyildiz.hackerrank.fp
   */
 object ListLength {
 
-  def f(arr:List[Int]) : Int = arr.length
+  def f(arr: List[Int]): Int = arr.length
 
   def main(args: Array[String]): Unit = {
 
-    val xs = Iterator.continually(scala.io.StdIn.readLine).takeWhile(_.nonEmpty)
-      .map(_.toInt)
-      .toList
-
+    val xs = Iterator.continually(scala.io.StdIn.readLine).takeWhile(_.nonEmpty).map(_.toInt).toList
 
     println(f(xs))
   }

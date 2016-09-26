@@ -5,9 +5,9 @@ package me.rayyildiz.hackerrank.fp
   */
 object FilterPositionsList {
 
-  def f(arr:List[Int]):List[Int] = {
+  def f(arr: List[Int]): List[Int] = {
     val res = for {
-      i <- arr.indices if ( i % 2 != 0)
+      i <- arr.indices if (i % 2 != 0)
     } yield arr(i)
 
     res.toList
@@ -15,7 +15,7 @@ object FilterPositionsList {
 
   def main(args: Array[String]): Unit = {
 
-    val xs = f(List(2, 5,3, 4, 6, 7, 9,8))
+    val xs = f(List(2, 5, 3, 4, 6, 7, 9, 8))
 
     println(xs)
   }
